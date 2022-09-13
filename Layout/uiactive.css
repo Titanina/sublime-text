@@ -102,16 +102,32 @@ justify-content: center;}
 #wrap header nav ul li a{font-size: 16px; color : #fff; font-weight: 600;
 line-height: 30px;}
 
+/* 텍스트는 <a> 태그 안에 있으므로 <a> 태그에 스타일을 지정 텍스트 크기는 16px 텍스트 색상은 흰색으로
+지정. 텍스트의 굵기를 진하게 하기위해 600을 입력, line-height를 사용해 텍스트 높이를 지정.*/
+
 #wrap header nav ul li:after{content: "";  display: block;  width: 5px; height: 5px;
 border-radius: 50% background: #fff; position: absolute; left: 0px; top: 13px;}
-
 #wrap header nav ul li : hover a{color : #ed3140;}
 #wrap header nav ul li : hover:after{background: #ed3140;}
+
+/* :hover 속성을 사용해 <a> 태그는 color를 지정. <li>태그는 가상요소인 :after는 background를 지정해
+	 마우스 반응에 따라 메뉴색상이 바뀌도록 변경 */
+
+
 #wrap header nav ul li : hover a,#wrap header nav ul li.on a{color: #ed3140;}
 #wrap header nav ul li : hover : after, #wrap header nav ul li.on:after {background: #ed3140;}
 
+/* 메뉴가 계속 활성화되도록 on이라는 클래스를 지정함. */
+
+
 footer{width: 180px; position: fixed; right: 0px; bottom: 0px; padding: 0px 20px 30px 20px;
 	   font-size: 11px; color: #7e7e7e; z-index: 12;}
+
+/* <footer> 태그는 브라우저 화면 기준 하단에 위치. <header>태그의 영역과 겹치니까, position의 속성값을
+   fixed로 지정하며, width는 <header>태그 영역(180px)만큼 지정 bottom, right 속성값 0으로 지정.
+   <footer> 태그의 텍스트 스타일 지정. font-size 속성값을 11px, color 속성값을 #7e7e7e로 지정해
+   <footer> 태그의 자식,자손 태그 모두 부모 태그 스타일을 상속받게함.*/
+
 
 footer address{padding: 0px 0px 15px 0px;}
 footer > a{display: block; width: 16px; height: 16px; position: absolute; top: -31px; transition: 4s;}
@@ -135,12 +151,26 @@ footer > a.instar:hover{background: url(../images/social_b_instar_hover.png)no-r
 #container .content:before,#container .content:after{content: ""; display: block;
 			position: absolute;}
 
+			/* 4개의 각 영역이 하나씩 페이지로 사용됨. 왼쪽에서 오른쪽으로 이동하는 형태. left 값을 지정해
+			이동이 가능하게끔 만듬. 각 left 값은 왼쪽부터 0으로 시작해 25%(section의 width)씩 증가시켜 
+			지정하면 하나의 영역에서 끝나는 위치에서 다른 영역에 위치함. 
+			각 영역을 구분하는 라인과 제목이 되는 텍스트를 가상요소로 넣음. 각 영역을 구성하기위해
+			content 클래스 기준, before와 after의 영역을 만듬.*/
+
+
 #container .content:before{width: 1px; height: 100%; background: #000; left: 0; top: 0; z-index: 4;}
 #container .content:after{left: 30px; top: 180px; font-size: 25px; font-weight: 700; color: #ed3140;}
 #container #menu1 : after{content: "회사소개";}
 #container #menu2 : after{content: "도서소개";}
 #container #menu3 : after{content: "FAQ";}
 #container #menu4 : after{content: "Contact Us";}
+
+			/* 가상요소로 만든 after의 각 영역에 제목이 되는 텍스트를 넣음. 
+			   content 클래스 기준이 아닌, menu숫자로 지정한 id를 사용해 이미지와 텍스트 각각 삽입.*/
+			   
+
+
+
 #container .content .conbox:before{content: ""; display: block; position: absolute;}
 #container #menu1   .conbox:before{background: url(../images/main_ico1.png)no-repeat;
 		  width: 350px; height: 260px; right: -10px; top: 130px; background-size: 100%;}
@@ -152,8 +182,6 @@ footer > a.instar:hover{background: url(../images/social_b_instar_hover.png)no-r
 		  width: 350px; height: 400px; right: -170px; top: 100px; background-size: 100%;}
 
 #container .content h2{opacity: 0;}
-
-
 
 
 
